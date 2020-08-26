@@ -1,10 +1,10 @@
 // https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki
-// bitcoin:<address>[?amount=<amount>][?label=<label>][?message=<message>]
+// helix:<address>[?amount=<amount>][?label=<label>][?message=<message>]
 
 var qs = require('qs')
 
 function decode (uri, urnScheme) {
-  urnScheme = urnScheme || 'bitcoin'
+  urnScheme = urnScheme || 'helix'
   var urnSchemeActual = uri.slice(0, urnScheme.length).toLowerCase()
   if (urnSchemeActual !== urnScheme ||
     uri.charAt(urnScheme.length) !== ':'
@@ -26,7 +26,7 @@ function decode (uri, urnScheme) {
 
 function encode (address, options, urnScheme) {
   options = options || {}
-  var scheme = urnScheme || 'bitcoin'
+  var scheme = urnScheme || 'helix'
   var query = qs.stringify(options)
 
   if (options.amount) {

@@ -14,8 +14,8 @@ fixtures.valid.forEach(function (f) {
     }
 
     t.plan(1)
-    // replace the bitcoin: portion (case-insensitive) with lowercase
-    t.equal(result, f.uri.replace(/^bitcoin:/i, 'bitcoin:'))
+    // replace the helix: portion (case-insensitive) with lowercase
+    t.equal(result, f.uri.replace(/^helix:/i, 'helix:'))
   })
 
   tape('decodes ' + f.uri + (f.compliant === false ? ' (non-compliant)' : ''), function (t) {
